@@ -1,6 +1,6 @@
-## Here is a sample SQL program that will analyze your KDP data from Amazon and provide information about how well your published books are doing by subgenre over time:
+/* Here is a sample SQL program that will analyze your KDP data from Amazon and provide information about how well your published books are doing by subgenre over time: */
 
-## First, you will need to create a table to store your KDP data. You can do this by running the following SQL statement:
+/* First, you will need to create a table to store your KDP data. You can do this by running the following SQL statement: */
 CREATE TABLE kdp_data (
   book_id INTEGER PRIMARY KEY,
   title TEXT NOT NULL,
@@ -9,24 +9,24 @@ CREATE TABLE kdp_data (
   publication_date DATE NOT NULL
 );
 
-##Next, you will need to import your KDP data into the table. You can do this by running an INSERT statement for each row of data in your KDP data file. For example:
+/* Next, you will need to import your KDP data into the table. You can do this by running an INSERT statement for each row of data in your KDP data file. For example: */
 
 INSERT INTO kdp_data (book_id, title, subgenre, sales, publication_date)
 VALUES (1, 'Book Title 1', 'Thriller', 50, '2022-01-01');
 
-## Now that you have your KDP data stored in the table, you can use a SELECT statement to analyze it. For example, to see how many sales you have had for each subgenre over time, you can use the following query:
+/* Now that you have your KDP data stored in the table, you can use a SELECT statement to analyze it. For example, to see how many sales you have had for each subgenre over time, you can use the following query: */
 
 SELECT subgenre, SUM(sales) as total_sales
 FROM kdp_data
 GROUP BY subgenre
-## This will return a result set with the total number of sales for each subgenre.
+/* This will return a result set with the total number of sales for each subgenre. */
 
-## If you want to see how well your books are doing over time, you can add a WHERE clause to your SELECT statement to filter the results by publication date. For example:
+/* If you want to see how well your books are doing over time, you can add a WHERE clause to your SELECT statement to filter the results by publication date. For example: */
 
 SELECT subgenre, SUM(sales) as total_sales
 FROM kdp_data
 WHERE publication_date BETWEEN '2022-01-01' AND '2022-12-31'
 GROUP BY subgenre
-## This will return a result set with the total number of sales for each subgenre during the specified time period.
+/* This will return a result set with the total number of sales for each subgenre during the specified time period. */
 
-## I hope this helps! Let me know if you have any questions or need further assistance.
+/* I hope this helps! Let me know if you have any questions or need further assistance. */
